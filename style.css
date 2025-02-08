@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container>*,
+.library-books>*,
+.books>* {
+    border: 1px solid red;
+}
+
+:root {
+    --background-color: #e2e8f0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color);
+}
+
+.grid-container {
+    display: grid;
+    margin: 2rem;
+    grid-template-rows: 3fr 1fr;
+}
+
+.library-books {
+    display: flex;
+    flex-direction: column;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.add-book {
+    justify-self: center;
+}
+
+.add-book button {
+    padding: 3rem;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
