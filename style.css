@@ -29,6 +29,7 @@ body {
 button {
     border: 0px;
     background-color: #ffffff;
+    font-weight: bold;
 }
 
 .grid-container {
@@ -63,6 +64,8 @@ button {
     padding: 3rem;
     font-size: 2rem;
     border-radius: 2rem;
+    border: 3px ridge black;
+    box-shadow: var(--shadow)
 }
 
 .book-card {
@@ -92,7 +95,13 @@ button {
     background-color: var(--background-color);
     padding: 1rem 2rem;
     border-radius: 2rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    border: 3px ridge black;
+}
+
+button.remove-button:hover {
+    background-color: red;
 }
 
 button:hover {

@@ -7,7 +7,7 @@
     <title>Library</title>
 
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 
 
@@ -20,15 +20,24 @@
             <h1 class="header">Your Books</h1>
             <div class="books">
 
-
-                <div class="book-card">
-                    <h2 class="title">Game Of Thrones</h2>
-                    <p class="author">Written By: <strong>Faris Osama</strong></p>
-                    <p class="pages">Number Of Pages: <strong>690</strong></p>
-                    <p class="status">Status: <span class="read-true"> <strong>Read</strong> </span></p>
-
-                    <button type="button">Change Status</button>
+                <!-- use .inactive class to remove this message when there is atleast one book -->
+                <div class="empty inactive">
+                    <strong>Looks like your library is empty! Why not add some books to get started?</strong>
                 </div>
+
+                <!-- <div class="book-card">
+
+                    <h2 class="title">Game Of Thrones</h2>
+                    <p class="author">Author: <strong>Faris Osama</strong></p>
+                    <p class="pages">Pages: <strong>690</strong></p>
+                    <p>Status: <span class="status read-true"> <strong>Read</strong> </span></p>
+
+                    <div class="buttons">
+                        <button type="button" class="status-button">Change Status</button>
+                        <button type="button" class="remove-button">Remove Book</button>
+                    </div>
+
+                </div> -->
 
             </div>
         </div>
