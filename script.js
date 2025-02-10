@@ -19,6 +19,20 @@ function Book(title, author, pages, isRead, status)
         this.status = "Not Yet Read"
     }
 
+    this.invertStaus = function ()
+    {
+        if (this.isRead == true)
+        {
+            this.isRead = false;
+            this.status = "Not Yet Read";
+        }
+        else
+        {
+            this.isRead = true;
+            this.status = "Completed";
+        }
+    }
+
 
 }
 
@@ -42,8 +56,13 @@ function displayBooks(array)
     for (let index = 0; index < array.length; index++)
     {
         const element = array[index];
+        if (element === null)
+        {
+            continue;
+        }
 
         const bookCard = createBookCard(element);
+        bookCard.setAttribute("data-book-index", `${index}`)
         booksArea.appendChild(bookCard);
 
     }
@@ -116,32 +135,18 @@ function createCardButtons()
 
     removeButton.addEventListener("click", function (event)
     {
-        const divToRemove = event.target.parentElement.parentElement;
-        const booksArea = divToRemove.parentElement;
-        divToRemove.remove();
-
-        // if (booksArea.innerHTML == "")
-        // {
-        //     const empty = document.querySelector(".empty");
-        //     empty.classList.remove("inactive")
-        // }
-
-        console.log(booksArea);
+        removeBook(event);
     })
 
-    statusButtonButton.addEventListener("click", function (event)
+    statusButton.addEventListener("click", function (event)
     {
-        // const divToRemove = event.target.parentElement.parentElement;
-        // const booksArea = divToRemove.parentElement;
-        // divToRemove.remove();
+        const divToChange = event.target.parentElement.parentElement;
 
-        // if (booksArea.innerHTML == "")
-        // {
-        //     const empty = document.querySelector(".empty");
-        //     empty.classList.remove("inactive")
-        // }
+        const index = divToChange.getAttribute("data-book-index");
+        libraryBooks[index].invertStaus();
 
-        // console.log(booksArea);
+        displayBooks(libraryBooks);
+
     })
 
     buttons.appendChild(statusButton);
@@ -150,5 +155,24 @@ function createCardButtons()
     return buttons;
 }
 
+function removeBook(event)
+{
+    const divToRemove = event.target.parentElement.parentElement;
+    const booksArea = divToRemove.parentElement;
+
+    const index = divToRemove.getAttribute("data-book-index");
+    libraryBooks[index] = null;
+
+    divToRemove.remove();
+    if (booksArea.innerHTML == "")
+    {
+        console.log("enter innerhtml empty")
+        const empty = document.querySelector(".empty");
+        empty.classList.remove("inactive")
+    }
+
+    displayBooks(libraryBooks);
+    console.log(divToRemove);
+}
 
 displayBooks(libraryBooks);
