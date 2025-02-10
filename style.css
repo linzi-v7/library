@@ -12,6 +12,7 @@
     /* border: 1px solid red; */
 }
 
+.inactive,
 div.inactive {
     display: none;
 }

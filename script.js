@@ -42,9 +42,9 @@ function addBookToLibrary(title, author, pages, isRead)
     libraryBooks.push(book);
 }
 
-function displayBooks(array)
+function displayBooks(arr)
 {
-    if (array.length == 0)
+    if (arr.length == 0 || arr.every(element => element === null))
     {
         console.log("Library Array Is Empty!");
         return;
@@ -53,9 +53,9 @@ function displayBooks(array)
     const booksArea = document.querySelector(".books");
     booksArea.innerHTML = "";
 
-    for (let index = 0; index < array.length; index++)
+    for (let index = 0; index < arr.length; index++)
     {
-        const element = array[index];
+        const element = arr[index];
         if (element === null)
         {
             continue;
@@ -169,6 +169,9 @@ function removeBook(event)
         console.log("enter innerhtml empty")
         const empty = document.querySelector(".empty");
         empty.classList.remove("inactive")
+
+        const notEmpty = document.querySelector(".not-empty");
+        notEmpty.classList.add("inactive")
     }
 
     displayBooks(libraryBooks);
