@@ -1,6 +1,16 @@
 const testBook = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
 const testBook2 = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 1178, true);
-const libraryBooks = [testBook, testBook2];
+const libraryBooks = [];
+
+const formDialog = document.querySelector(".book-form-dialog");
+const libraryGrid = document.querySelector(".grid-container");
+const addBookButton = document.querySelector(".add-book-button");
+
+addBookButton.addEventListener("click", function ()
+{
+    showLibrary(false);
+    formDialog.show();
+})
 
 function Book(title, author, pages, isRead, status)
 {
@@ -47,7 +57,12 @@ function displayBooks(arr)
     if (arr.length == 0 || arr.every(element => element === null))
     {
         console.log("Library Array Is Empty!");
+        showEmptyMessage(true);
         return;
+    }
+    else
+    {
+        showEmptyMessage(false);
     }
 
     const booksArea = document.querySelector(".books");
@@ -166,16 +181,43 @@ function removeBook(event)
     divToRemove.remove();
     if (booksArea.innerHTML == "")
     {
-        console.log("enter innerhtml empty")
-        const empty = document.querySelector(".empty");
-        empty.classList.remove("inactive")
-
-        const notEmpty = document.querySelector(".not-empty");
-        notEmpty.classList.add("inactive")
+        showEmptyMessage(true);
     }
 
     displayBooks(libraryBooks);
     console.log(divToRemove);
+}
+
+//function to activate or deactivate library area (needed to show form)
+function showLibrary(active)
+{
+    if (active)
+    {
+        libraryGrid.classList.remove("inactive")
+    }
+    else
+    {
+        libraryGrid.classList.add("inactive")
+    }
+}
+
+function showEmptyMessage(active)
+{
+
+    const empty = document.querySelector(".empty");
+    const notEmpty = document.querySelector(".not-empty");
+
+
+    if (active)
+    {
+        empty.classList.remove("inactive");
+        notEmpty.classList.add("inactive");
+    }
+    else
+    {
+        empty.classList.add("inactive");
+        notEmpty.classList.remove("inactive");
+    }
 }
 
 displayBooks(libraryBooks);

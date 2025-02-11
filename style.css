@@ -69,7 +69,8 @@ button {
     box-shadow: var(--shadow)
 }
 
-.book-card {
+.book-card,
+.form-card {
 
     background-color: white;
     padding: 2rem;
