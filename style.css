@@ -111,3 +111,88 @@ button:hover {
     color: white;
     cursor: pointer;
 }
+
+/*form area*/
+
+.book-form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.book-form-dialog {
+    width: 50%;
+    height: 70%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-left: 25%;
+
+}
+
+.form-item {
+    margin-bottom: 15px;
+}
+
+/* .form-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+} */
+
+.form-item input[type="text"],
+.form-item input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-item input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.form-item input:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.form-item input[type="text"]:invalid,
+.form-item input[type="number"]:invalid {
+    border-color: #ff6b6b;
+}
+
+.form-item input[type="text"]:valid,
+.form-item input[type="number"]:valid {
+    border-color: #4caf50;
+}
+
+.book-form-dialog button {
+    padding: 10px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.book-form-dialog>.close-button {
+    background-color: rgb(255, 0, 0);
+}
+
+.close-button:hover {
+    background-color: rgb(163, 1, 1);
+}
+
+.book-form-dialog>form button:hover {
+    background-color: #45a049;
+}
