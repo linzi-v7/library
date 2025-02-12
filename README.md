@@ -2,7 +2,7 @@
 
 ## Overview  
 
-This project is part of **The Odin Project** curriculum, focusing on creating a simple Library application that allows users to manage a collection of books. Users can add new books, view a list of all books, remove books, and toggle the read status of each book. The app is built using **HTML**, **CSS**, and **JavaScript**.
+This project is part of **The Odin Project** curriculum, focusing on creating a simple library application that allows users to manage a collection of books. Users can add new books, view a list of all books, remove books, and toggle the read status of each book. The app is built using **HTML**, **CSS**, and **JavaScript**. This project prioritizes functionality and interactivity over visual design.
 
 ## Technologies Used  
 
@@ -32,12 +32,13 @@ The project is organized into the following key components:
 - **Local Storage**: Save the library data to local storage so that it persists after the page is refreshed.  
 - **Search and Filter**: Add functionality to search and filter books by title, author, or read status.  
 - **Enhanced Styling** – Adding **CSS animations and transitions** for better UX.  
-- **Edit Book Details**: Allow users to edit the details of a book after it has been added.  
+- **Edit Book Details**: Allow users to edit the details of a book after it has been added.
+- **Sorting Books**: Users can sort books alphabetically, by author, or by page count.
 - **Clean Code**: Refactor the code to follow best practices and improve maintainability.
 
 ## Live Demo  
 
-[View on GitHub Pages](https://your-username.github.io/library-app/)  
+[View on GitHub Pages](https://linzi-v7.github.io/library/)  
 
 ## Acknowledgments  
 
@@ -45,14 +46,14 @@ The project is organized into the following key components:
 
 ## License  
 
-This project is open-source and available under the **MIT License**.  
+This project is open-source and available under the [MIT License](https://github.com/linzi-v7/library/blob/main/LICENSE).  
 
 ## Contact  
 
 For any inquiries or collaborations, feel free to reach out:  
 
-- **GitHub** – [your-username](https://github.com/your-username)  
-- **LinkedIn** – [Your Name](https://www.linkedin.com/in/your-profile/)  
+- **GitHub** – [linzi-v7](https://github.com/linzi-v7)  
+- **LinkedIn** – [Faris Osama](https://www.linkedin.com/in/faris-osama-7a3496303/)  
 
 ---
 
