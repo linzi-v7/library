@@ -36,6 +36,14 @@ The project is organized into the following key components:
 - **Sorting Books**: Users can sort books alphabetically, by author, or by page count.
 - **Clean Code**: Refactor the code to follow best practices and improve maintainability.
 
+## Screenshots
+
+- **Site**  
+  <img src="./images/github/website_screenshot.png" alt="Admin Dashboard Screenshot" width="500">  
+
+- **Form**  
+  <img src="./images/github/form.png" alt="Reference Dashboard" width="500">  
+
 ## Live Demo  
 
 [View on GitHub Pages](https://linzi-v7.github.io/library/)  
