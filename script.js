@@ -1,24 +1,66 @@
 const testBook = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
 const testBook2 = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 1178, true);
-const libraryBooks = [];
+const testBook3 = new Book('1984', 'George Orwell', 328, true);
+const testBook4 = new Book('To Kill a Mockingbird', 'Harper Lee', 281, false);
+const testBook5 = new Book('Pride and Prejudice', 'Jane Austen', 279, true);
+const testBook6 = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 180, false);
+const testBook7 = new Book('Moby Dick', 'Herman Melville', 585, true);
+const libraryBooks = [testBook, testBook2, testBook3, testBook4, testBook5, testBook6, testBook7];
 
 const formDialog = document.querySelector(".book-form-dialog");
+const addBookForm = document.querySelector(".book-form-dialog form")
 const libraryGrid = document.querySelector(".grid-container");
 const addBookButton = document.querySelector(".add-book-button");
+
+const dialogCloseButton = document.querySelector(".book-form-dialog .close-button")
+
+formDialog.addEventListener("close", () =>
+{
+    showLibrary(true);
+    showBookFormArea(false);
+    addBookForm.reset();
+    displayBooks(libraryBooks);
+})
 
 addBookButton.addEventListener("click", function ()
 {
     showLibrary(false);
-    formDialog.show();
+    showBookFormArea(true);
+    formDialog.showModal();
 })
 
-function Book(title, author, pages, isRead, status)
+dialogCloseButton.addEventListener("click", () =>
+{
+    formDialog.close();
+
+})
+
+addBookForm.addEventListener("submit", function (event)
+{
+
+
+    const formData = new FormData(addBookForm);
+
+    const title = formData.get("title");
+    const author = formData.get("author");
+    const pages = formData.get("pages");
+    var status = formData.get("status");
+    status = (status == "on") ? true : false;
+
+    console.log(status)
+
+    addBookToLibrary(title, author, pages, status);
+
+
+})
+
+function Book(title, author, pages, isRead)
 {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
-    this.status = status
+
 
     if (this.isRead == true)
     {
@@ -198,6 +240,20 @@ function showLibrary(active)
     else
     {
         libraryGrid.classList.add("inactive")
+    }
+}
+
+function showBookFormArea(active)
+{
+    const bookForm = document.querySelector(".book-form");
+
+    if (active)
+    {
+        bookForm.classList.remove("inactive")
+    }
+    else
+    {
+        bookForm.classList.add("inactive")
     }
 }
 
