@@ -66,6 +66,7 @@ button {
 
 .add-book {
     justify-self: center;
+    margin-top: 2rem;
 }
 
 .add-book button {
