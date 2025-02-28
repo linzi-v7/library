@@ -1,3 +1,43 @@
+
+class Book
+{
+    constructor(title, author, pages, isRead)
+    {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+
+
+        if (this.isRead == true)
+        {
+            this.status = "Completed";
+        }
+
+        else
+        {
+            this.status = "Not Yet Read";
+        }
+
+        this.invertStaus = function ()
+        {
+            if (this.isRead == true)
+            {
+                this.isRead = false;
+                this.status = "Not Yet Read";
+            }
+
+            else
+            {
+                this.isRead = true;
+                this.status = "Completed";
+            }
+        };
+
+
+    }
+}
+
 const testBook = new Book('The Hobbit', 'J.R.R. Tolkien', 295, false);
 const testBook2 = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 1178, true);
 const testBook3 = new Book('1984', 'George Orwell', 328, true);
@@ -54,39 +94,7 @@ addBookForm.addEventListener("submit", function (event)
 
 })
 
-function Book(title, author, pages, isRead)
-{
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
 
-
-    if (this.isRead == true)
-    {
-        this.status = "Completed"
-    }
-    else
-    {
-        this.status = "Not Yet Read"
-    }
-
-    this.invertStaus = function ()
-    {
-        if (this.isRead == true)
-        {
-            this.isRead = false;
-            this.status = "Not Yet Read";
-        }
-        else
-        {
-            this.isRead = true;
-            this.status = "Completed";
-        }
-    }
-
-
-}
 
 function addBookToLibrary(title, author, pages, isRead)
 {
